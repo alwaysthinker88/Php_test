@@ -1,0 +1,102 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle(( $pagetitle )); ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+        <link rel="stylesheet" type="text/less" href="/css/style.less" media="screen, projection" />
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon','href' => $this->basePath() . '/img/favicon.ico'))
+            ->prependStylesheet($this->basePath() . '/css/style.less');
+        ?>
+
+        <!-- Scripts -->
+        <?php echo $this->headScript()
+
+            ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+            ->prependFile($this->basePath() . '/js/less-1.5.0.min.js')
+            ->prependFile($this->basePath() . '/js/jquery.min.js')
+
+            ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+            ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
+
+        ; ?>
+
+    </head>
+    <body>
+     <div class="header">
+<p>Test project</p>
+</div>
+
+
+     <div class="nav">
+<!--         <a href="--><?php //echo $this->url('home',array('action'=>'show'));?><!--">Create a list with the last two hundred events</a>-->
+
+
+
+
+         <div class="form_list"  method="get">
+
+             <form>
+                   <input type="submit" value="Show last 200 records from database" name="task1">
+
+
+             </form>
+         </div>
+
+
+
+
+     <div class="form_list"  method="get">
+
+         <form>
+             <label>terminal id:</label><input type="text" name="terminal_id">
+             <div>NOTICE: If you did not give a value as terminal id, the system print out all of datas (notice and warnings) within specified period</div>
+             <label>from date: </label><input type="date" name="from_date">
+             <label>to date: </label><input type="date" name="to_date">
+             <div class="submit_div">
+             <input type="submit" value="Submit" name="task2">
+
+                 </div>
+         </form>
+         </div>
+         <div class="form_list">
+
+             <form>
+                 <label>My terminal id:</label><input type="text" name="firstname">
+                 <label>My device_id: </label><input type="text" name="lastname">
+                 <div class="submit_div">
+                     <input type="submit" value="Call">
+
+                 </div>
+             </form>
+
+
+         </div>
+
+         <div class="form_list">
+
+             <form>
+                 <label>terminal id:</label><input type="text" name="firstname">
+                 <label>device_id: </label><input type="text" name="lastname">
+                 <div class="submit_div">
+                 <input type="submit" value="Show alerts at the given device">
+
+                 </div>
+             </form>
+
+
+         </div>
+     </div>
+        <div class="container">
+            <?php echo $this->content; ?>
+
+        </div>
+        <?php echo $this->inlineScript() ?>
+    </body>
+</html>

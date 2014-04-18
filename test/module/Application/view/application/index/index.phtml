@@ -1,0 +1,69 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Arpad
+ * Date: 4/17/14
+ * Time: 6:44 PM
+ */
+
+$this->layout()->pagetitle = "Home";
+
+if (isset($show_200)){
+    echo "<table class=\"table_datas titles\">";
+    echo "<tr>";
+
+//    echo($value['id']);
+    echo "<td>Date</td>";
+    echo "<td>Type</td>";
+    echo "<td>Category</td>";
+    echo "</tr>";
+
+    echo "</table>";
+    $this->layout()->pagetitle = "Show 200";
+
+
+
+
+
+
+echo "<table class=\"table_datas\">";
+echo "<tr>";
+foreach ($show_200 as $value) {
+//    echo($value['id']);
+    echo "<td>".$value['time']."</td>";
+    echo "<td>".$value['type']."</td>";
+    echo "<td>".$value['category']."</td>";
+    echo "</tr>";
+}
+echo "</table>";
+}
+if(isset($show_date)){
+    echo "<table class=\"table_datas titles\">";
+    echo "<tr>";
+
+//    echo($value['id']);
+    echo "<td>Date</td>";
+    echo "<td>Terminal_id</td>";
+    echo "<td>Type</td>";
+    echo "<td>Category</td>";
+    echo "</tr>";
+
+    echo "</table>";
+
+
+    echo "<table class=\"table_datas\">";
+    echo "<tr>";
+    foreach ($show_date as $value) {
+//    echo($value['id']);
+        echo "<td>".$value['time']."</td>";
+        echo "<td>".$value['terminal_id']."</td>";
+        echo "<td>".$value['type']."</td>";
+        echo "<td>".$value['category']."</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+    $this->layout()->pagetitle = "Show by dates";
+}
+
+
+
