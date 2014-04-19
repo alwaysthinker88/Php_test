@@ -65,5 +65,58 @@ if(isset($show_date)){
     $this->layout()->pagetitle = "Show by dates";
 }
 
+if(isset($terminal_error)){
+
+    echo $terminal_error;
+
+
+}
+if(isset($device_id)){
+
+    echo "Your device_id is ".$device_id;
+
+
+}
+if(isset($error_term)){
+
+    echo "Your device_id is ".$error_term;
+
+
+}
+
+
+if (isset($terminal_devices)){
+    echo "<table class=\"table_datas titles\">";
+    echo "<tr>";
+
+//    echo($value['id']);
+    echo "<td>Date</td>";
+    echo "<td>Type</td>";
+    echo "<td>Category</td>";
+    echo "</tr>";
+
+    echo "</table>";
+    $this->layout()->pagetitle = "Show 200";
+
+
+
+
+
+
+    echo "<table class=\"table_datas\">";
+    echo "<tr>";
+    foreach ($terminal_devices as $value) {
+//    echo($value['id']);
+
+//        print_r($value);
+        echo "<td>".$value['time']."</td>";
+        echo "<td>".$value['TYPE']."</td>";
+        echo "<td>".$value['category']."</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+}
+
+
 
 
